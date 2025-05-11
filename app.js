@@ -1,10 +1,12 @@
 const express = require('express');
 const { createAudioFileFromText } = require('./texttospeech'); // Assuming this file is named app.js
+require('dotenv').config();
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+console.log('API Key available:', !!process.env.ELEVENLABS_API_KEY);
 
 app.post('/generate-audio', async (req, res) => {
     const { text } = req.body;
