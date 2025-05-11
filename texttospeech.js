@@ -13,6 +13,7 @@ if (!ELEVENLABS_API_KEY) {
 const client = new ElevenLabsClient({
   apiKey: ELEVENLABS_API_KEY,
 });
+console.log('ElevenLabs client initialized', client);
 
 // Helper: Convert Web ReadableStream to Buffer
 async function webReadableStreamToBuffer(webStream) {
